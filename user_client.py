@@ -20,10 +20,10 @@ def create_user():
     url = 'http://localhost:8000/users/create'
 
     data = {
-            'username':'marian1234',
+            'username':'marianmarian',
             'password':'awdawd283AWDawdadwd',
             'confirm_password':'awdawd283AWDawdadwd',
-            'email':'marian@gmail.com'
+            'email':'marianawwd@gmail.com'
             }
 
     res = requests.post(url=url,data=data)
@@ -50,9 +50,10 @@ def signIn():
     url = 'http://localhost:8000/users/signin'
 
     data = {
-            # 'username':'gigi1232d',
-            'username':'marian1234',
+            # 'username':'gigi',
+            'username':'marian123456',
             'password':'awdawd283AWDawdadwd',
+            # 'password':'ak471989'
             }
 
     res = requests.post(url=url,data=data)
@@ -119,13 +120,13 @@ def update_user():
 
 
     headers = {
-        'Authorization':'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMxNTk1MjkxLCJpYXQiOjE3MzE1OTE2OTEsImp0aSI6IjAzNDcyODg4ZDJiODQ3OTZhMWFhZWFhZjRkZjg1MWJmIiwidXNlcm5hbWUiOiJtYXJpYW4xMjMifQ.yn745E7gYRLT6HQ6WtiJ_3xDggdo2UAbHYOmwkoOLG4'
+        'Authorization':'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMxNzkyOTIwLCJpYXQiOjE3MzE3ODkzMjAsImp0aSI6ImI4OGFiMTNmYmY1YTQ3ZDA4MDUwZGNiMDY0MmFjOGNmIiwidXNlcm5hbWUiOiJtYXJpYW4xMjM0NTYifQ.-CpZVeQ_x4xIWFwdS-bwxCC3HU9G-Fp85xgY7zkBVhU'
             }
 
     data = {
             'username':'marian8888',
             'password':'awdawd283AWDawdsef',
-            'confirm_password':'awdawd283AWDawdsef',
+            'confirm_password':'dawdawd283AWDawdsef',
             'email':'marian888@gmaawdawwdil.com'
             }
 
@@ -160,6 +161,30 @@ def update_user_password():
 
 
 
+def all_users():
+
+    url = 'http://localhost:8000/users/all'
+
+    res = requests.delete(url=url)
+
+    print(res.status_code)
+    print(res.text)
+
+
+def remove():
+
+    url = 'http://localhost:8000/users/all_remove'
+
+
+    headers = {
+        'Authorization':'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMxNzkyNDExLCJpYXQiOjE3MzE3ODg4MTEsImp0aSI6ImJhMjk2Y2JkZDIxYjQyYjY5YTcwY2YxMmUyMzIwNjQ5IiwidXNlcm5hbWUiOiJtYXJpYW4xMjM0NSJ9.8Jxqd1vsa7Bfyvj-O5tOfMe_Qx0a0TeqhjQ6GHRIb-M'
+            }
+
+
+    res = requests.delete(url=url, headers=headers)
+
+    print(res.status_code)
+    print(res.text)
 
 
 
@@ -183,3 +208,7 @@ if __name__ == '__main__':
         update_user()
     elif sys.argv[1] == 'update_user_password':
         update_user_password()
+    elif sys.argv[1] == 'all':
+        all_users()
+    elif sys.argv[1] == 'remove':
+        remove()

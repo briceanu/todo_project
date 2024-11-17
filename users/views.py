@@ -40,7 +40,7 @@ class RemoveUserAPI(generics.DestroyAPIView):
         try:
             # remove the user and send a 200 OK to the 
             user.delete()
-            return Response({'success':f'user {user}removed'},status=status.HTTP_200_OK)
+            return Response({'success':f'user {user} removed'},status=status.HTTP_200_OK)
         except Exception as e:
             return Response({'error':str(e)},status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
@@ -189,7 +189,6 @@ def update_user_password(request):
 
 
 
-
 # update all the user data
 class UpdateUserDataAPI(viewsets.ViewSet):
     
@@ -228,4 +227,3 @@ class UpdateUserDataAPI(viewsets.ViewSet):
 
 
 
-    
